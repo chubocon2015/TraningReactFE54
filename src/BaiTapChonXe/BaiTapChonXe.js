@@ -58,7 +58,7 @@ export default class BaiTapChonXe extends Component {
                                  <div className="row border border-dark p-2">
                                      <div className="col-2 mt-3">
                                       <img style={{cursor:'pointer'}} onClick={()=>{
-                                          this.changeColor('steel')
+                                          this.changeColor('steel   ')
                                       }} src="./img/car/icons/icon-steel.jpg" width="100" height ="100"/>
                                      </div>
                                      <div className="col-10 pt-5">
