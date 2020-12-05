@@ -38,6 +38,32 @@ export class ProductList extends Component {
             });
         } 
     }
+    deleteItem = (maSPClick)=>{
+        // console.log(maSP);
+        //tạo ra 1 giỏi hàng mới giống giá trị giỏ hàng cũ
+        let gioHangCapNhat = [...this.state.cart];
+        //Xử lý xóa trên giỏ hàng mới 
+        let index = gioHangCapNhat.findIndex(spGH=>spGH.maSP === maSPClick);
+        if (index !== -1) {
+            gioHangCapNhat.splice(index,1);
+        }
+        this.setState({
+            cart:gioHangCapNhat
+        });
+        //Gán lại giỏ hàng cũ bằng giỏ hàng mới
+    }
+    tangGiamSoLuong = (maSPClick,soLuong) => {
+        // console.log(maSP);
+        let gioHangCapNhat = [...this.state.cart];
+        //Tìm trong giỏ hàng có sản phẩm mã == với sản phẩm được click + hoặc -
+        let spGioHang = gioHangCapNhat.find(spGH => spGH.maSP === maSPClick);
+        if (spGioHang) {
+            spGioHang.soLuong +=soLuong;
+        }
+        this.setState({
+            cart:gioHangCapNhat
+        });
+    }
     render() {
 
         const { productDetail, cart } = this.state;
@@ -45,7 +71,7 @@ export class ProductList extends Component {
         return (
 
             <div>
-                <Modal cart={cart} />
+                <Modal cart={cart} deleteItem={this.deleteItem} tangGiamSoLuong={this.tangGiamSoLuong}/>
                 <div className="row">
                     {this.renderProduct()}
                 </div>

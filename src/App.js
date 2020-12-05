@@ -14,6 +14,7 @@ import DemoProps from './Props/DemoProps';
 import ProductListRCC from './Props/ProductListRCC';
 import PropsWhitEvent from "./ProductWhitEvent/index"
 import BaiTapThucHanhLayout from './BaiTapThucHanhLayout/BaiTapThucHanhLayout';
+import BaiTapGioHangRedux from './BaiTapRedux/BaiTapGioHangRedux';
 function App() {
   return (
     <div className="App">
@@ -28,7 +29,8 @@ function App() {
       {/* <DemoProps/> */}
       {/* <ProductListRCC/> */}
       {/* <PropsWhitEvent/> */}
-      <BaiTapThucHanhLayout/>
+      {/* <BaiTapThucHanhLayout/> */}
+      <BaiTapGioHangRedux/>
     </div>
   );
 }
